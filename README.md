@@ -2,7 +2,7 @@
 
 # Ansible Role: Inspec
 
-Role to install (_by default_) extended [inspec](https://github.com/inspec/inspec) on **Debian/Ubuntu** and **EL** systems.
+Role to install (_by default_) extended [inspec](https://github.com/inspec/inspec) on **Debian**, **Ubuntu** and **EL** systems.
 
 ## Requirements
 
@@ -18,9 +18,13 @@ Available variables are listed below (located in `defaults/main.yml`):
 inspec_app: inspec
 inspec_version: 4.18.100
 inspec_debian_os: "{{ ansible_distribution|lower }}"
-inspec_debian_os_version: "{{ ansible_distribution_version}}"
+inspec_debian_os_version: "{{ ansible_distribution_major_version }}"
 inspec_debian_os_arch: amd64
 inspec_debian_dl_url: "https://packages.chef.io/files/stable/{{ inspec_app }}/{{ inspec_version }}/{{ inspec_debian_os }}/{{ inspec_debian_os_version }}/{{ inspec_app }}_{{ inspec_version }}-1_{{ inspec_debian_os_arch }}.deb"
+inspec_ubuntu_os: "{{ ansible_distribution|lower }}"
+inspec_ubuntu_os_version: "{{ ansible_distribution_version}}"
+inspec_ubuntu_os_arch: amd64
+inspec_ubuntu_dl_url: "https://packages.chef.io/files/stable/{{ inspec_app }}/{{ inspec_version }}/{{ inspec_debian_os }}/{{ inspec_debian_os_version }}/{{ inspec_app }}_{{ inspec_version }}-1_{{ inspec_debian_os_arch }}.deb"
 inspec_el_os: el
 inspec_el_os_arch: x86_64
 inspec_el_os_version: "{{ ansible_distribution_major_version }}"
@@ -29,18 +33,22 @@ inspec_el_dl_url: "https://packages.chef.io/files/stable/{{ inspec_app }}/{{ ins
 
 ### Variables table:
 
-Variable                 | Value (default)                                                                                                                                                                                                                | Description
------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------
-inspec_app               | inspec                                                                                                                                                                                                                         | Defines the app to install i.e. **inspec**
-inspec_version           | 4.18.100                                                                                                                                                                                                                       | Defined to dynamically fetch the desired version to install. Defaults to: **4.18.100**
-inspec_debian_os         | "{{ ansible_distribution                                                                                                                                                                                                       | lower }}"                                                                                                                         | Defined to collect the operating system name and store it's value in lowercase
-inspec_debian_os_version | "{{ ansible_distribution_version}}"                                                                                                                                                                                            | Gathers facts to collect OS Version.
-inspec_debian_os_arch    | amd64                                                                                                                                                                                                                          | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **amd64**
-inspec_debian_dl_url     | "<https://packages.chef.io/files/stable/{{> inspec_app }}/{{ inspec_version }}/{{ inspec_debian_os }}/{{ inspec_debian_os_version }}/{{ inspec_app }}_{{ inspec_version }}-1_{{ inspec_debian_os_arch }}.deb"                  | Defines URL to download the inspec debian file from for Debain based Operating Systems.
-inspec_el_os             | el                                                                                                                                                                                                                             | Defined to for EL based systems.
-inspec_el_os_version     | "{{ ansible_distribution_major_version}}"                                                                                                                                                                                      | Gathers facts to collect OS major version on EL based systems.
-inspec_el_os_arch        | x86_64                                                                                                                                                                                                                         | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **x86_64**
-inspec_el_dl_url         | "<https://packages.chef.io/files/stable/{{> inspec_app }}/{{ inspec_version }}/{{ inspec_el_os }}/{{ inspec_el_os_version }}/{{ inspec_app }}-{{ inspec_version }}-1.el{{ inspec_el_os_version }}.{{ inspec_el_os_arch }}.rpm" | Defines URL to download the inspec rpm file from for EL based Operating Systems.
+Variable                 | Description
+------------------------ | ---------------------------------------------------------------------------------------------------------------------------------
+inspec_app               | Defines the app to install i.e. **inspec**
+inspec_version           | Defined to dynamically fetch the desired version to install. Defaults to: **4.18.100**
+inspec_debian_os         | Defined to collect the operating system name and store it's value in lowercase
+inspec_debian_os_version | Gathers facts to collect OS Version.
+inspec_debian_os_arch    | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **amd64**
+inspec_debian_dl_url     | Defines URL to download the inspec debian file from for Debain Systems.
+inspec_ubuntu_os         | Defined to collect the operating system name and store it's value in lowercase
+inspec_ubuntu_os_version | Gathers facts to collect OS Version.
+inspec_ubuntu_os_arch    | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **amd64**
+inspec_ubuntu_dl_url     | Defines URL to download the inspec debian file from for Ubuntu Systems.
+inspec_el_os             | Defined to for EL based systems.
+inspec_el_os_version     | Gathers facts to collect OS major version on EL based systems.
+inspec_el_os_arch        | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **x86_64**
+inspec_el_dl_url         | Defines URL to download the inspec rpm file from for EL based Operating Systems.
 
 ## Dependencies
 
