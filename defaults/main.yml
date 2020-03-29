@@ -1,0 +1,13 @@
+---
+# defaults file for inspec
+
+inspec_app: inspec
+inspec_version: 4.18.100
+inspec_debian_os: "{{ ansible_distribution|lower }}"
+inspec_debian_os_version: "{{ ansible_distribution_version}}"
+inspec_debian_os_arch: amd64
+inspec_debian_dl_url: "https://packages.chef.io/files/stable/{{ inspec_app }}/{{ inspec_version }}/{{ inspec_debian_os }}/{{ inspec_debian_os_version }}/{{ inspec_app }}_{{ inspec_version }}-1_{{ inspec_debian_os_arch }}.deb"
+inspec_el_os: el
+inspec_el_os_arch: x86_64
+inspec_el_os_version: "{{ ansible_distribution_major_version }}"
+inspec_el_dl_url: "https://packages.chef.io/files/stable/{{ inspec_app }}/{{ inspec_version }}/{{ inspec_el_os }}/{{ inspec_el_os_version }}/{{ inspec_app }}-{{ inspec_version }}-1.el{{ inspec_el_os_version }}.{{ inspec_el_os_arch }}.rpm"
