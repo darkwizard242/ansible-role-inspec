@@ -13,7 +13,6 @@ env:
   global:
     - ROLE_NAME: inspec
   jobs:
-    - DISTRO: centos-8
     - DISTRO: centos-7
     - DISTRO: ubuntu-18.04
     - DISTRO: ubuntu-16.04
