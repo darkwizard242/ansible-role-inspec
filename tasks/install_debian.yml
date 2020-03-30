@@ -1,0 +1,6 @@
+---
+# tasks file for inspec - Debian
+
+- name: "Downloading and installing {{ inspec_app }} {{ inspec_version }} on Debian systems."
+  apt:
+    deb: "{{ inspec_debian_dl_url }}"

@@ -1,0 +1,6 @@
+---
+# tasks file for inspec - EL
+
+- name: "Downloading and extracting {{ inspec_app }} {{ inspec_version }} on EL based systems."
+  yum:
+    name: "{{ inspec_el_dl_url }}"
