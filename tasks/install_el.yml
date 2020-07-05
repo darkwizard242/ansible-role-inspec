@@ -1,6 +1,6 @@
 ---
-# tasks file for inspec - EL
+# tasks file for inspec - EL Family
 
-- name: "Downloading and extracting {{ inspec_app }} {{ inspec_version }} on EL based systems."
+- name: EL Family | Downloading and extracting {{ inspec_app }} {{ inspec_version }}
   yum:
     name: "{{ inspec_el_dl_url }}"

@@ -1,6 +1,6 @@
 ---
-# tasks file for inspec - Ubuntu
+# tasks file for inspec - Ubuntu OS
 
-- name: "Downloading and installing {{ inspec_app }} {{ inspec_version }} on Ubuntu systems."
+- name: Ubuntu OS | Downloading and installing {{ inspec_app }} {{ inspec_version }}
   apt:
     deb: "{{ inspec_ubuntu_dl_url }}"
