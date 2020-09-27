@@ -4,3 +4,4 @@
 - name: EL Family | Downloading and extracting {{ inspec_app }} {{ inspec_version }}
   yum:
     name: "{{ inspec_el_dl_url }}"
+    disable_gpg_check: "{{ inspec_el_disable_gpg_check }}"
