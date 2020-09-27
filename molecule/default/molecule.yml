@@ -14,12 +14,6 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     pre_build_image: true
     privileged: true
-  - name: ${DISTRO:-centos-7}
-    image: "darkwizard242/ansible:${DISTRO:-centos-7}"
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    pre_build_image: true
-    privileged: true
 provisioner:
   name: ansible
   log: true
