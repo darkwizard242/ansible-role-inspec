@@ -18,3 +18,4 @@ inspec_el_dl_url: "https://packages.chef.io/files/stable/{{ inspec_app }}/{{ ins
 inspec_el_disable_gpg_check: no
 inspec_el_rpm_key_url: "https://packages.chef.io/chef.asc"
 inspec_el_rpm_key_fingerprint: "1168 5DB9 2F03 640A 2FFE 7CA8 2940 ABA9 83EF 826A"
+inspec_el_rpm_key_state: present
