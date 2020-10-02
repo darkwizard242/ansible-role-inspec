@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 inspec_app: inspec
-inspec_version: 4.23.10
+inspec_version: 4.23.11
 inspec_debian_os: "{{ ansible_distribution|lower }}"
 inspec_debian_os_version: "{{ ansible_distribution_major_version }}"
 inspec_debian_os_arch: amd64
