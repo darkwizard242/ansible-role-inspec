@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: inspec
-  author: Ali Muhammad
+  author: darkwizard242
   description: Installs/Uninstalls 'inspec'- an auditing and testing framework.
   company: none
   license: MIT
