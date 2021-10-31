@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 inspec_app: inspec
-inspec_version: 4.46.13
+inspec_version: 4.49.0
 inspec_debian_os: "{{ ansible_distribution|lower }}"
 inspec_debian_os_version: "{{ ansible_distribution_major_version }}"
 inspec_debian_os_arch: amd64
@@ -40,7 +40,7 @@ inspec_el_rpm_key_state: present
 Variable                      | Description
 ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------
 inspec_app                    | Defines the app to install i.e. **inspec**
-inspec_version                | Defined to dynamically fetch the desired version to install. Defaults to: **4.46.13**
+inspec_version                | Defined to dynamically fetch the desired version to install. Defaults to: **4.49.0**
 inspec_debian_os              | Defined to collect the operating system name and store it's value in lowercase
 inspec_debian_os_version      | Gathers facts to collect OS Version.
 inspec_debian_os_arch         | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **amd64**
@@ -88,4 +88,4 @@ For customizing behavior of role (i.e. specifying the desired **inspec** version
 
 ## Author Information
 
-This role was created by [Ali Muhammad](https://www.linkedin.com/in/ali-muhammad-759791130/).
+This role was created by [Ali Muhammad](https://www.alimuhammad.dev/).
