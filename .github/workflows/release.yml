@@ -19,10 +19,10 @@ jobs:
       with:
         path: 'darkwizard242.inspec'
 
-    - name: Set up Python 3.8
+    - name: Set up Python 3.10.0
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.10.0
 
     - name: Update repo cache, install python3-setuptools and required pip modules
       run: |
