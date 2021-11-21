@@ -9,7 +9,7 @@ lint: |
     flake8
 platforms:
   - name: ${DISTRO:-ubuntu-18.04}
-    image: "darkwizard242/ansible:${DISTRO:-ubuntu-18.04}"
+    image: "darkwizard242/ansible:${DISTRO:-ubuntu-20.04}"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     pre_build_image: true
