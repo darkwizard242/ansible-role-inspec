@@ -7,10 +7,10 @@ on:
   push:
     branches:
       - 'feature*'
-      - 'feature/*'
       - 'feature_*'
-      - 'hotfix*'
+      - 'feature/*'
       - 'hotfix/*'
+      - 'hotfix*'
       - 'master'
   schedule:
     - cron: '0 18 * * *'
@@ -26,7 +26,7 @@ jobs:
     steps:
 
     - name: Checkout source code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
       with:
         path: 'darkwizard242.inspec'
         fetch-depth: 0
@@ -34,6 +34,7 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       with:
+        projectBaseDir: 'darkwizard242.inspec'
         args: >
           -Dsonar.projectVersion=${{ github.ref }}_${{ github.run_number }}
       env:
@@ -48,12 +49,12 @@ jobs:
     strategy:
       max-parallel: 6
       matrix:
-        IMAGE: [ubuntu-20.04, ubuntu-18.04, centos-8, centos-7, debian-buster, debian-stretch]
+        IMAGE: [ubuntu-20.04, ubuntu-18.04, rockylinux-8, centos-7, debian-buster, debian-stretch]
 
     steps:
 
     - name: Checkout source code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
       with:
         path: 'darkwizard242.inspec'
 
@@ -69,6 +70,7 @@ jobs:
         pip3 install -U pip wheel ansible molecule[docker] docker ansible-lint flake8 pytest-testinfra
 
     - name: Execute Molecule test of role for ${{ matrix.IMAGE }}
+      working-directory: 'darkwizard242.inspec'
       run: DISTRO=${{ matrix.IMAGE }} molecule test
       env:
         PY_COLORS: '1'
