@@ -2,5 +2,5 @@
 # tasks file for inspec - Debian OS
 
 - name: Debian OS | Downloading and installing {{ inspec_app }} {{ inspec_version }}
-  apt:
+  ansible.builtin.apt:
     deb: "{{ inspec_debian_dl_url }}"
