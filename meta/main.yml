@@ -15,9 +15,6 @@ galaxy_info:
       versions:
         - bullseye
         - buster
-    - name: EL
-      versions:
-        - 8
 
   galaxy_tags:
     - inspec
