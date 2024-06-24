@@ -11,15 +11,10 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - focal
-        - bionic
     - name: Debian
       versions:
         - bullseye
         - buster
-    - name: EL
-      versions:
-        - 8
-        - 7
 
   galaxy_tags:
     - inspec
